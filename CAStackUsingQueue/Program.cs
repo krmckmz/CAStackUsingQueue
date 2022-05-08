@@ -11,6 +11,15 @@ namespace CAStackUsingQueue
             stack.Push(1);
             stack.Push(2);
             stack.Push(3);
+            stack.Pop();
+
+            #region Default Queue Process
+            //Queue queue = new Queue();
+            //queue.Enqueue(1);
+            //queue.Enqueue(2);
+            //queue.Enqueue(3);
+            //queue.Dequeue();
+            #endregion
 
             Console.ReadLine();
         }
@@ -33,7 +42,8 @@ namespace CAStackUsingQueue
 
             while(queue1.Count > 0)
             {
-                queue2.Enqueue(queue1.Peek());
+                var peekItem = queue1.Peek();
+                queue2.Enqueue(peekItem);
                 queue1.Dequeue();
             }
 
@@ -42,13 +52,13 @@ namespace CAStackUsingQueue
             queue2 = queue;
         }
 
-        public void pop()
+        public void Pop()
         {
 
             // if no elements are there in q1
             if (queue1.Count == 0)
                 return;
-            queue1.Dequeue();
+            var dequeued = queue1.Dequeue();
             curr_size--;
         }
 
